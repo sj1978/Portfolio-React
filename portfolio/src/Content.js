@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import img1 from './images/budget.png'
 import img2 from './images/covid.png'
@@ -7,10 +7,48 @@ import img4 from './images/ozone.png'
 import {FaArrowRight} from 'react-icons/fa'
 import {FaArrowLeft} from 'react-icons/fa'
 
+
+
 const Content = () => {
+
+const siguiente = () => {
+  if(slideshow.current.children.length > 0){
+    const primerElemento = slideshow.current.children[0]
+    slideshow.current.style.transition = '300ms ease-out all'
+    slideshow.current.style.transform = 'translateX(-100%)'
+    const transicion = () => {  
+
+    slideshow.current.style.transition = 'none'
+    slideshow.current.style.transform = 'translateX(0)'
+    slideshow.current.appendChild(primerElemento)
+    slideshow.current.removeEventListener('transitionend', transicion);
+      }
+      slideshow.current.addEventListener('transitionend', transicion)
+    
+
+  }
+  }
+  const anterior = () => {
+		if(slideshow.current.children.length > 0){
+			// Obtenemos el ultimo elemento del slideshow.
+			const index = slideshow.current.children.length - 1;
+			const ultimoElemento = slideshow.current.children[index];
+			slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
+			
+			slideshow.current.style.transition = 'none';
+			const tamañoSlide = slideshow.current.children[0].offsetWidth;
+			slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
+		
+			setTimeout(() => {
+				slideshow.current.style.transition = `300ms ease-out all`;
+				slideshow.current.style.transform = `translateX(0)`;
+			}, 30);
+		}
+	}
+  const slideshow = useRef(null)
   return (
     <ContenedorPrincipal>
-      <ContenedorSlideshow>
+      <ContenedorSlideshow ref={slideshow}>
       <Slide>
         <a href='#'>
           <img src={img1} alt='budget app photo' />
@@ -53,10 +91,10 @@ const Content = () => {
       </Slide>
       </ContenedorSlideshow>
       <Controles>
-        <Boton>
+        <Boton onClick={anterior}>
           <FaArrowLeft />
         </Boton>
-        <Boton >
+        <Boton derecho onClick={siguiente}>
        <FaArrowRight />
         </Boton>
       </Controles>
@@ -107,7 +145,21 @@ height: 100%;
 pointer-events: none;  
 `
 const Boton = styled.button`
-pointer-events: all;`
+pointer-events: all;
+background: none;
+borer: none;
+cursor: pointer;
+outline: none;
+width: 50px;
+height: 100%;
+text-align: center;
+trasition: .3s ease all;
+
+
+${props => props.derecho ? 'right: 0': 'left: 0'}
+
+`
+
 
 
 export default Content
