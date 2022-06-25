@@ -67,9 +67,9 @@ const Content = () => {
             <img src={img2} alt="covid app photo" />
           </a>
           <TextoSlide>
-            <a href="#">Source</a>
-            <p>Covid App</p>
-            <a href="#">See Live</a>
+            <a href="https://github.com/sj1978/react-redux-capstone.git" target="_blank">Source</a>
+            <p>Covid in South America</p>
+            <a href="https://react-redux-capstone-sj1978.herokuapp.com/" target="_blank">See Live</a>
           </TextoSlide>
         </Slide>
         <Slide>
@@ -77,9 +77,9 @@ const Content = () => {
             <img src={img3} alt="reservify photo" />
           </a>
           <TextoSlide>
-            <a href="#">Source</a>
+            <a href="https://github.com/Yothu/reservify-back-end.git" target="_blank">Source</a>
             <p>Reservify</p>
-            <a href="#">See Live</a>
+            <a href="https://reservify.netlify.app/" target="_blank">See Live</a>
           </TextoSlide>
         </Slide>
         <Slide>
@@ -87,9 +87,9 @@ const Content = () => {
             <img src={img4} alt="ozono app photo" />
           </a>
           <TextoSlide>
-            <a href="#">Source</a>
+            <a href="https://github.com/sj1978/ozone-rails-app.git" target="_blank">Source</a>
             <p>Ozono App</p>
-            <a href="#">See Live</a>
+            <a href="https://airozonequality.herokuapp.com/" target="_blank">See Live</a>
           </TextoSlide>
         </Slide>
       </ContenedorSlideshow>
