@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <h1 className='anibal'>Anibal Amoroso</h1>
+      <h2 className='dev'>Full-Stack Developer</h2>
     <main className="main">
       <Content />
     </main>

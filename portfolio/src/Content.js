@@ -120,8 +120,8 @@ z-index: 10;
 max-height: 230px;
 position: relative;
 img {
-  width: 850px;
-  height: 250px;
+  width: 82vw;
+  height: 240px;
   vertical-align: top;
 }
 
