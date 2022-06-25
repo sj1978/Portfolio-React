@@ -8,8 +8,8 @@
 body{
   font-family: 'Hind', sans-serif;
   font-size: 16px;
-  background: #f5f5f5;
   text-align: center;
+  background: #ebdfdf;
 }
 .main {
 max-width: 1000px;
