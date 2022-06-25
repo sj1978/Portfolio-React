@@ -30,7 +30,6 @@ const siguiente = () => {
   }
   const anterior = () => {
 		if(slideshow.current.children.length > 0){
-			// Obtenemos el ultimo elemento del slideshow.
 			const index = slideshow.current.children.length - 1;
 			const ultimoElemento = slideshow.current.children[index];
 			slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild);
@@ -118,8 +117,8 @@ z-index: 10;
 max-height: 230px;
 position: relative;
 img {
-  width: 100%;
-  height: 100%;
+  width: 850px;
+  height: 250px;
   vertical-align: top;
 }
 
