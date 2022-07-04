@@ -1,0 +1,14 @@
+.navbar{
+display: flex;
+background-color: blue;
+height: 3.7vw;
+color: coral;
+;
+}
+ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 18vw;
+    list-style-type: none;
+    margin-top: 11px
+  }

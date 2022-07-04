@@ -1,13 +1,20 @@
 import React from 'react'
-import {FaArrowRight} from 'react-icons/fa'
+import "./Navbar.css"
+
 
 
 const Navbar = () => {
   return (
-    <div>
-      <FaArrowRight />
+    <div className="navbar">
+<ul>
+  <li>Home</li>
+  <li>About</li>
+  <li>Contact</li>
+  <li>Projects</li>
+</ul>
+
     </div>
-    
+  
   )
 }
 
