@@ -44,6 +44,7 @@ const Content = () => {
   const slideshow = useRef(null);
   return (
     <ContenedorPrincipal>
+      <h1 className="latest">Latest Projects</h1>
       <ContenedorSlideshow ref={slideshow}>
         <Slide>
           <a href="#">
