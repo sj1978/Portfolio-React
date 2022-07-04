@@ -4,10 +4,8 @@ import "./Home.css"
 export const Home = () => {
   return (
     <main>
- <h1 className='h1'>
-  <span>Anibal</span>
-  <span>Amoroso</span>
-
+ <h1 className='lineUp'>
+Anibal Amoroso
  
 </h1>
 
