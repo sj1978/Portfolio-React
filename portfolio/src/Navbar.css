@@ -1,9 +1,9 @@
 .navbar{
 display: flex;
-background-color: blue;
+background-color: rgb(10, 10, 10);
 height: 3.7vw;
-color: coral;
-;
+color: whitesmoke;
+
 }
 ul {
     display: grid;
@@ -13,4 +13,18 @@ ul {
     margin-top: 11px;
     margin-left: auto;
     margin-right: auto;
+    color: whitesmoke;
   }
+  ul a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.5vw;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+  }
+    ul a:hover {
+        color: #61dafb;
+    }
