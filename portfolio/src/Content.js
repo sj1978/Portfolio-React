@@ -61,6 +61,9 @@ const Content = () => {
             >
               See Live
             </a>
+            <button>
+              Description
+            </button>
           </TextoSlide>
         </Slide>
         <Slide>
