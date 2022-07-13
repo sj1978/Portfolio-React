@@ -190,7 +190,7 @@ const Boton = styled.button`
   cursor: pointer;
   outline: none;
   width: 50px;
-  height: 100%;
+  height: 40px;
   text-align: center;
   trasition: 0.3s ease all;
 
