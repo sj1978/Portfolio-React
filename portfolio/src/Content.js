@@ -68,7 +68,7 @@ const Content = () => {
             >
               See Live
             </a>
-            <Button onClick={showModal}>I'm a modal</Button>
+            <Button onClick={showModal}>Description</Button>
             <Modal modal={modal} setModal={setModal}  />
           </TextoSlide>
         </Slide>
@@ -117,13 +117,16 @@ const Content = () => {
 
 const Button = styled.button`
   min-width: 100px;
-  padding: 16px 32px;
+  padding: 3px 10px;
   border-radius: 4px;
   border: none;
-  background: #141414;
-  color: #fff;
-  font-size: 24px;
+  background: none;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
   cursor: pointer;
+ 
 `;
 
 const ContenedorPrincipal = styled.div`

@@ -32,19 +32,21 @@ const CloseModalButton = styled(MdClose)`
 
 `;
 const Background = styled.div`
-width: 600px;
-height: 600px;
+width: 520px;
+height: 520px;
 background: rgba(0, 0, 0, 0.8);
 position: fixed;
+top: 1vw;
 display: flex;
 justify-content: center;
 align-items: center;
 `;
 const ModalImg = styled.img`
-  width: 300px
-  height: 300px;
+  
+ 
   border-radius: 10px 0 0 10px;
-  background: #000;
+  background: orange;
+ 
 `;
 const ModalWrapper = styled.div`
 width: 500px;
@@ -53,10 +55,17 @@ box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
 background: #fff;
 color: #000;
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
 position: relative;
 z-index: 10;
 border-radius: 10px;
+img{
+  
+  width: 350px;
+  height: 180px;
+  border-radius: 10px;
+  margin:  auto;
+}
 `;
 
 
@@ -70,16 +79,13 @@ export const Modal = ({modal, setModal}) => {
     <Background>
         <ModalWrapper modal={modal} >
             <ModalImg src={require('./images/budget.png')}/>
-            <ModalContent>
-                <h1>Budget</h1>
+             <ModalContent>
+                <h1>Expense Tracker</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec euismod, nisl eget consectetur sagittis, nisl nunc
-                    consectetur nisi, euismod aliquam nisl nunc euismod
-                    aliquam.
+                Expense tracker is an application where the user creates an account and can keep track of their expenses. It is a mobile app. Created with Ruby on Rails.
                 </p>
                 </ModalContent>
-                <CloseModalButton onClick={() => setModal(false)}/>
+                <CloseModalButton onClick={() => setModal(prev => !prev)}/>
 
         </ModalWrapper >
 
