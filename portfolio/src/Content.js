@@ -1,4 +1,6 @@
 import React, { useRef } from "react";
+import { useState } from "react";
+import {Modal} from './Modal'
 import styled from "styled-components";
 import img1 from "./images/budget.png";
 import img2 from "./images/covid.png";
@@ -8,6 +10,11 @@ import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 
 const Content = () => {
+  const [modal , setModal] = useState(false);
+
+  const showModal = () => { 
+    setModal(prev => !prev);
+  }
   const siguiente = () => {
     if (slideshow.current.children.length > 0) {
       const primerElemento = slideshow.current.children[0];
@@ -61,9 +68,8 @@ const Content = () => {
             >
               See Live
             </a>
-            <button>
-              Description
-            </button>
+            <Button onClick={showModal}>I'm a modal</Button>
+            <Modal modal={modal} setModal={setModal}  />
           </TextoSlide>
         </Slide>
         <Slide>
@@ -108,6 +114,18 @@ const Content = () => {
     </ContenedorPrincipal>
   );
 };
+
+const Button = styled.button`
+  min-width: 100px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: none;
+  background: #141414;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+`;
+
 const ContenedorPrincipal = styled.div`
   position: relative;
 `;
