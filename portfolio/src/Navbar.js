@@ -1,8 +1,10 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
+import { SidebarData } from './SidebarData'
+import './Navbar.css';
 import * as AiIcons from 'react-icons/ai'
 import * as FaIcons from 'react-icons/fa'
+import { IconContext } from 'react-icons';
 
 
 
@@ -10,10 +12,12 @@ const Navbar = () => {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => {
+      console.log (sidebar)
         setSidebar(!sidebar);
     }
   return (
     <>
+          <IconContext.Provider value={{ color: 'yellow' }}>
     <div className="navbar">
 <Link to='#' className='menu-bars' >
         <FaIcons.FaBars  onClick={showSidebar} />
@@ -25,24 +29,26 @@ const Navbar = () => {
       <ul className='nav-menu-items'>
         <li className='navbar-toggle'>
           <Link to='#' className='menu-bars'>
-            <AiIcons.AiOutlineClose/>
+            <AiIcons.AiOutlineClose onClick={showSidebar}/>
           </Link>
         </li>
-<li className='navbar-toggle'>
-  <Link to="/"> Home</Link>
-  </li>
-  <li> 
-   <Link to="/projects"> Projects</Link>
-   </li>
-   <li> 
-   <Link to="/contact"> Contact</Link>
-   </li>
-   <li> 
-   <Link to="/about"> About</Link>
-   </li>
+
+
+        {SidebarData.map((item, index) => {
+          return (
+            <li key={index} className={item.cName}>
+              <Link to={item.path} className='nav-text'>
+                {item.icon}
+                <span>{item.title}</span>
+              </Link>
+            </li>
+          );
+        }
+        )}
 </ul>
 
 </nav>
+</IconContext.Provider>
    </>
   )
 }
